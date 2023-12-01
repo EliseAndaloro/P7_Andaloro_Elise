@@ -15,24 +15,21 @@ function extractTags(){
     ingredientsTags = [
         ...new Set(
             filteredRecipes
-                .flatMap(recipe => recipe.ingredients.map(ingredient => ingredient.ingredient.toLowerCase()))
+                .flatMap(recipe => recipe.ingredients.map(ingredient => ingredient.ingredient))
                 .map(ingredient => capitalizeFirstLetter(ingredient))
         )
     ].sort();    
     appliancesTags = [
         ...new Set(
             filteredRecipes
-                .map(({ appliance }) => appliance.toLowerCase())
-                .map(appliance => capitalizeFirstLetter(appliance))
+                .map(({ appliance }) => capitalizeFirstLetter(appliance))
         )
     ].sort();
     
     ustensilsTags = [
         ...new Set(
             filteredRecipes
-                .flatMap(({ ustensils }) => ustensils.map(ustensil => ustensil.toLowerCase()))
-                .map(ustensil => capitalizeFirstLetter(ustensil))
-                
+                .flatMap(({ ustensils }) => ustensils.map(ustensil => capitalizeFirstLetter(ustensil)))
         )
     ].sort();    
     targetTagsArray = {
