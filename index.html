@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <title>Les petits plats</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1><img src="./assets/logo_lespetitsplats.png" alt="Logo des petis plats" /></h1>
+        </div>
+        <div id="search">
+            <input id="searchbar" name="searchbar" type="text" placeholder="Rechercher une recette" />
+            <i id="searchicon" class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div id="tags"></div>
+        <div id="filters">
+            <div>
+                <div id="ingredients" class="ingredient">
+                    <span>Ingrédients</span><i class="fa-solid fa-chevron-down" style ="cursor:pointer"></i>
+                </div>
+                <div id="ingredients_input" class="ingredient hidden">
+                    <div>
+                        <input name="ingredient" type="text" placeholder="Rechercher un ingrédient" oninput="tagsSearchbar(event)"/><i class="fa-solid fa-chevron-up" style ="cursor:pointer"></i>
+                    </div>
+                    <ul id="ingredients_list"></ul>
+                </div>
+            </div>
+            <div>
+                <div id="appliances" class="appliance">
+                    <span>Appareils</span><i class="fa-solid fa-chevron-down" style ="cursor:pointer"></i>
+                </div>
+                <div id="appliances_input" class="appliance hidden">
+                    <div>
+                        <input name="appliance" type="text" placeholder="Rechercher un appareil" oninput="tagsSearchbar(event)"/><i class="fa-solid fa-chevron-up" style ="cursor:pointer"></i>
+                    </div>
+                    <ul id="appliances_list"></ul>
+                </div>
+            </div>
+            <div>
+                <div id="ustensils" class="ustensil">
+                    <span>Ustensiles</span><i class="fa-solid fa-chevron-down" style ="cursor:pointer"></i>
+                </div>
+                <div id="ustensils_input" class="ustensil hidden">
+                    <div>
+                        <input name="ustensil" type="text" placeholder="Rechercher un ustensile" oninput="tagsSearchbar(event)"/><i class="fa-solid fa-chevron-up" style ="cursor:pointer"></i>
+                    </div>
+                    <ul id="ustensils_list"></ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="recipes"></main>
+    <p id="errorDiv"></p>
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/recipes.js"></script>
+    <script src="./scripts/tags.js"></script>
+    <script src="./scripts/menus.js"></script>
+</body>
+
+</html>
